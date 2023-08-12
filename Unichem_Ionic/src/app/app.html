@@ -1,0 +1,42 @@
+<ion-menu [content]="content">
+
+  <ion-toolbar color="button">
+    <ion-buttons>
+      <ion-row>
+        <ion-col col-2>
+          <ion-avatar><img src="images/icon.png"></ion-avatar>
+        </ion-col> 
+          <ion-title>
+            Bizlo Feedback App
+          </ion-title>
+      </ion-row>
+    </ion-buttons>
+  </ion-toolbar>
+ 
+  <ion-content>
+    <ion-list >
+      <ion-item no-lines>
+      </ion-item>
+      <ion-item no-lines style = "background-color: #FFF3E0;">
+      </ion-item>
+      <ion-item text-wrap no-lines style = "background-color: #FFF3E0;" >
+        <ion-avatar item-left>
+          <ion-icon name="person" style="font-size :40px;"></ion-icon>
+        </ion-avatar>
+        <p style = "font-size :1.2em;">Welcome !</p>
+        <h2 style = "font-size :1.2em;"><strong>{{globalVars.USER_NAME}}</strong></h2>
+      </ion-item>
+    </ion-list>
+    <ion-list>  
+      <button menuClose ion-item *ngFor="let p of globalVars.MENU_ARR" (click)="openPage(p)">
+          {{p.title}}
+      </button>
+      <button menuClose ion-item (click)="logout()">
+          Logout
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,56 @@
+<!--
+  Generated template for the DoctorRemarks page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Doctor Remarks</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+      <ion-item text-wrap>
+        <h2 style = "font-size : 1.1em"><strong>{{surveyDetails['title']}}</strong></h2>
+        <ion-row>
+              <ion-col text-left>
+                <ion-icon name="calendar" color="primary"></ion-icon> {{surveyDetails['startDate']}}
+              </ion-col>
+              <ion-col text-right>
+                <ion-icon name="calendar" color="danger"></ion-icon> {{surveyDetails['endDate']}}
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <strong>Total Feedback : </strong>{{surveyDetails['feedbackCount']}}
+              </ion-col>
+          </ion-row>
+      </ion-item>
+
+	<ion-card *ngFor="let d of doctors; let i=index" >
+	  
+	  <ion-row><ion-icon name="person" style = "margin-top: 5px"></ion-icon><p style = "font-size: 1.1em; margin-left: 10px"><strong>{{doctors[i][0].name}}</strong></p> </ion-row>
+
+	  <ion-row color=grey>
+	  <ion-col col-8><p><strong>Question</strong></p></ion-col>
+	  <ion-col col-4 text-center><p><strong>Ratings</strong></p></ion-col>
+	  </ion-row>
+
+	  <ion-row *ngFor="let f of d let j=index">
+	  <ion-col col-8><p text-wrap>{{surveyDetails['question'][j]['question']}}</p></ion-col>
+	  <ion-col col-4 text-center>{{d[j].rating}}
+        <ion-icon name="star" color=gold></ion-icon></ion-col>
+	  </ion-row><br/>
+	  <ion-row><strong>Feedback</strong> : {{doctors[i][0].remarks}} </ion-row>
+	  </ion-card>
+
+    <ion-fab bottom right color = danger><button ion-fab mini (click)="share()"><ion-icon name="mail"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>
+

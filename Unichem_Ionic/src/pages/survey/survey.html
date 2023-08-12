@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Survey page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="navbar">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title color="theme" >Take Survey</ion-title>
+    <!--<ion-buttons end>
+        <ion-icon><img src="images/icon.png" style="width: 20px;height: 20px;" ></ion-icon>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list no-lines>
+    <ion-item text-wrap>
+        Welcome to the Bizlo Feedback App !
+      </ion-item>
+      <ion-item text-wrap>
+        Kindly enter the Doctor's Registration Number to proceed with the feedback survey.<br>
+        Your feedback is valuable to us to help us grow and provide you with better service and experience. 
+    </ion-item>
+  </ion-list>
+  
+	<ion-list no-lines>
+      <!--<ion-item text-center>
+        <ion-icon>
+          <img src="images/logo_unichem.png"/>
+        </ion-icon>
+      </ion-item>-->
+      <ion-item text-wrap>
+        <strong>{{surveyDetails['title']}}</strong>
+      </ion-item>
+      <hr>
+      <ion-item>
+        <ion-label floating>Doctor Registration No</ion-label>
+        <ion-input type="number" value="" [(ngModel)]="userData.Code"></ion-input>
+      </ion-item>
+      <ion-item>
+      </ion-item>
+      <button ion-button color="button" block (click)="fetchDetails()">Start Survey</button>
+      <ion-item text-center>
+        <p style="color:#FF0000;">{{message}}</p>
+      </ion-item>
+            
+  </ion-list>
+  
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <!--<ion-title>Footer</ion-title>-->
+
+    <ion-item>
+      <ion-col  text-right>
+        <img src="images/logo_bizlo.png" style="height: 20px;" />
+          &nbsp;&nbsp;&nbsp;
+        <img src="images/uniforeva.png" style="height: 20px;" />
+      </ion-col>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

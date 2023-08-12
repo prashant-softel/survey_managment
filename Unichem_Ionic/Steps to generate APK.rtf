@@ -1,0 +1,20 @@
+Steps to generate APK (Navigate to project directory before executing following commands) : 
+
+1. Add android platform (1 time process) :
+	sudo ionic platform add android
+
+2. Create keystore (1 time process) : 
+	
+	keytool -genkey -v -keystore BizloFeedback.keystore -alias BizloFeedback -keyalg RSA -keysize 2048 -validity 10000
+
+3. Generate Unsigned APK :
+	sudo ionic build android --prod --release
+
+4. Sign APK with jar signer (PassPhrase : Bizlo123) : 
+	sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore BizloFeedback.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk BizloFeedback
+
+5. Verify Signing : 
+	sudo jarsigner -verify -verbose -certs platforms/android/build/outputs/apk/android-release-unsigned.apk
+
+6. Zipalign final APK : 
+	sudo "%ANDROID_HOME%/build-tools/25.0.3/zipalign" -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/BZFB-7.apk

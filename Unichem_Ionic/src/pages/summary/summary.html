@@ -1,0 +1,77 @@
+<!--
+  Generated template for the Summary page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="navbar">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Summary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-row style="background-color: #FF8C00;color:#fff;">
+      	<ion-col>
+        	<strong>Survey Details</strong>
+      	</ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col></ion-col>
+    </ion-row>
+    <ion-item>
+		<ion-row>
+			<ion-col col-4>
+				Active :
+			</ion-col>
+			<ion-col text-right>
+				{{activeCount}}
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-4>
+				Completed :
+			</ion-col>
+			<ion-col text-right>
+				{{completedCount}}
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-4>
+				Total :
+			</ion-col>
+			<ion-col text-right>
+				{{totalCount}}
+			</ion-col>
+		</ion-row>
+    </ion-item>
+
+    <!--<ion-row style="background-color: #FF8C00;color:#fff;">
+      	<ion-col>
+        	<strong>Feedback Details</strong>
+      	</ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col></ion-col>
+    </ion-row>
+    <ion-item>
+		<ion-row>
+			<ion-col col-4>
+				Total :
+			</ion-col>
+			<ion-col text-right>
+				1000
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-4>
+				Avg. per survey :
+			</ion-col>
+			<ion-col text-right>
+				780
+			</ion-col>
+		</ion-row>
+    </ion-item>-->
+</ion-content>

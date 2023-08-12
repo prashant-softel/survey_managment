@@ -1,0 +1,17 @@
+page-doctor-remarks {
+
+}
+
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 0px 5px 0px !important;
+    background: none;
+    color: #ffb600;
+
+    ion-icon {
+      font-size: 10px;
+    } 
+  }
+}
